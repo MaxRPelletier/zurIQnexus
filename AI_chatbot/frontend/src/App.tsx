@@ -1,11 +1,14 @@
+// import { useState } from "react";
+import Controller from "./components/Controller";
+
+
 function App() {
-
   return (
-    <>
       <div className="">
-
+       <>
+        <Controller />
+       </>
       </div>
-    </>
   );
 }
 
