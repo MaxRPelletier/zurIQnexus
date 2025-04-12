@@ -14,7 +14,7 @@
             overflow: hidden;
             font-family: Arial, sans-serif;
         }
-
+ 
         .container {
             display: flex;
             width: 100%;
@@ -40,6 +40,23 @@
             box-sizing: border-box;
             overflow-y: auto;
         }
+
+        .suggestion-output {
+            width: 100%;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
 
         img {
             width: 100%;
@@ -110,12 +127,13 @@
 <body>
     <div class="container">
         <div class="left">
-            <img src="screenshot_raiffeisen.png" alt="Sample Scrollable Image">
+            <img src="raiffeisen_demo.png" alt="Sample Scrollable Image">
         </div>
 
         <div class="right">
             <div class="boxes" id="boxContainer"></div>
             <div class="info-output" id="infoOutput">Say a subject to see details...</div>
+            <div class="suggestion-output" id="suggestionOutput">Suggestions will appear here...</div>
             <div class="text-output" id="output">Speak to see text...</div>
         </div>
     </div>

@@ -2,34 +2,25 @@
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const subjects = {
-    "Consulting Mandate": "With the Raiffeisen advisory mandate, you make your own investment decisions but benefit from Raiffeisen's analyses, market assessments and recommendations. It offers comprehensive and professional investment advice tailored to your individual needs and investment goals.",
-    "Asset Management Mandate": "Entrust us with your needs and goals – we take care of their implementation. Your portfolio is managed according to your specifications and continuously monitored and optimized by our investment experts.",
-    "Variable Mortgage": "With a variable-rate mortgage, you remain flexible: there is no fixed interest rate and no fixed term. The interest rate adjusts to the current market conditions.",
-    "Membership and Share Certificate": "As a cooperative member, you are more than just a customer: you are part of your local Raiffeisen bank. You have a say and are committed to the region and the local economy.",
-    "Fixed-rate Mortgage": "With a fixed‑rate mortgage, you benefit from a constant interest rate and financial planning security over the entire term. This mortgage is particularly suitable for long‑term financing where you want to protect yourself against rising interest rates.",
-    "E-banking: Benefits and Advantages": "With Raiffeisen e‑banking, you can carry out your banking transactions conveniently wherever you have internet access. It offers a wide range of functions to help you manage your finances efficiently.",
-    "Card Self Service": "Provides an overview of all your Raiffeisen cards plus management functions such as topping up prepaid cards, blocking cards, ordering replacement cards, and adjusting daily and monthly limits.",
-    "Mastercard": "With the Mastercard credit card from Raiffeisen, you can make cashless payments worldwide. You can choose between different variants (e.g. Silver or Gold) that offer additional convenience and valuable extra services.",
-    "Fund Savings Plan": "With a fund savings plan, you invest your assets systematically. You benefit from higher potential returns than on a savings account—without having to worry about stock market timing—and choose from a wide range of funds.",
-    "Variable Rate Loan": "The variable rate loan enables you to finance medium‑term investments (e.g. in equipment or business expansions) without affecting your business liquidity. Falling interest rates may also help reduce repayment costs.",
-    "Fixed Loan": "The fixed‑rate loan finances medium‑term investments at a constant interest rate over the entire term, allowing you to precisely plan the interest charges. It is especially suitable in low or rising interest rate environments.",
-    "Current Account": "A current account forms the basis of banking transactions for companies, institutions, and the self‑employed. It allows for quick and convenient processing of all payment transactions and offers numerous financial services.",
-    "Securities Custody Account": "Ideal for investors who want to make their own investment decisions or receive selective advice. It provides the option to buy and sell investments online via e‑banking or by telephone.",
-    "Visa Debit Card": "With the Raiffeisen Visa Debit Card, you can make cashless payments worldwide and use it for online purchases. It provides flexibility and security for your daily banking transactions.",
-    "Prepaid Credit Card": "The prepaid Raiffeisen Mastercard or Visa Card lets you make cashless payments worldwide. It offers the advantages of a credit card on a pre‑funded basis—ideal for occasional use while traveling or online shopping.",
-    "Debit Mastercard": "With the Raiffeisen Debit Mastercard, you can make cashless payments worldwide and use it for online purchases. It is designed for flexible and secure everyday banking transactions.",
-    "Private Account": "The private account serves as the basis for your everyday banking—handling transfers, standing orders, and salary payments—while offering full transparency and security in your transactions.",
-    "TWINT": "The Raiffeisen TWINT app lets you pay conveniently and securely with your smartphone, send money to friends and family, and use a range of functions that simplify your payment and transfer needs.",
-    "Pension Fund": "Pension funds offer the opportunity to build up pension capital while taking advantage of potential returns from the financial markets. They help optimize your retirement provision by investing in funds tailored to your risk profile and goals.",
-    "Retirement Savings Account 3a": "The 3a retirement savings account provides financial security in old age by supplementing the benefits of the first and second pillars while offering annual tax savings. It is an important part of closing pension gaps.",
-    "Savings Account": "A savings account is ideal for achieving short- and medium‑term savings goals. It offers the possibility to grow your savings securely and continuously through regular deposits and the benefits of compound interest.",
-    "Raiffeisen Rio": "Raiffeisen Rio is an uncomplicated, completely digital investment solution managed by experienced investment experts. It allows you to build a customizable investment portfolio starting from as little as CHF 5,000.",
-    "SARON Flex Mortgage": "The SARON Flex mortgage adjusts immediately to changes in interest rates. Based on the Swiss Average Rate Over Night (SARON), it offers flexibility along with the opportunity to benefit from falling rates.",
-    "Visa Card Gold EUR/USD": "The Visa Card Gold International in euros or US dollars is tailored for customers holding a foreign currency account in the respective currency. It provides valuable additional benefits—including integrated insurance—for cashless payments worldwide.",
-    "YoungMember Private Account": "Designed for pupils, trainees, and young professionals aged 12 to 26, this free private account is meant for managing daily banking transactions such as pocket money or salary while offering attractive savings benefits and access to additional card services.",
-    "Vested Benefits Account": "The vested benefits account is used for the safekeeping of pension fund assets during career breaks (for example, when changing jobs or during further training), with the option of investment in pension funds.",
-    "YoungMember Student": "The YoungMember Student account serves as a transaction account for students—supporting payroll and everyday payment transactions—while providing preferential conditions and access to a range of additional services."
+    "Consulting Mandate": "With the Raiffeisen advisory mandate, you make your own investment decisions but benefit from Raiffeisen's analyses, market assessments and recommendations. It offers comprehensive and professional investment advice tailored to your individual needs and investment goals.\n\nAdvantages:\n- Comprehensive investment advice with professional support.\n- Portfolio monitoring with contact during relevant market changes.\n- Low-cost investment products and reduced transaction fees.\n- Maximum transparency in recommended investment products, performance, and costs.\n\nServices:\n- Needs and objectives determination through detailed consultation.\n- Expert investment proposals based on current market developments.\n- Continuous monitoring and proactive contact when necessary.\n\nInvestment Strategies:\n- Yield, Balanced, Growth, Shares options depending on risk appetite.\n\nImportant Principles:\n- Sustainability integration, broad diversification, cost transparency.\n\nFAQs:\n- Difference between advisory and asset management mandates.\n- Portfolio monitoring practices.",
+
+    "Asset Management Mandate": "Entrust Raiffeisen with your investment needs and goals. Your portfolio is managed according to your specifications, continuously monitored, and optimized.\n\nAdvantages:\n- Delegated management by specialists.\n- Active mandate management according to your strategy.\n- Systematic portfolio monitoring and transparency in decisions.\n\nServices:\n- Investor profile creation.\n- Strategic and tactical portfolio implementation.\n- Continuous global market monitoring.\n\nProducts:\n- Futura Global, Futura Swissness, Futura Impact, Index Global.\n\nCustomization:\n- Regular payouts, exclusion of alternative investments, direct Swiss equities investments, individual mandates available.\n\nSustainability:\n- ESG criteria considered in investment strategies.\n\nFAQs:\n- Mandate process, customization options, management.",
+
+    "Variable Mortgage": "Stay flexible with a mortgage that has no fixed interest rate or term. The interest rate adjusts to market conditions.\n\nAdvantages:\n- Flexibility with no binding term.\n- Immediate profit when interest rates fall.\n- Option to switch to another mortgage model.\n\nRisks:\n- Interest rate risk and fluctuating interest charges.\n\nFAQs:\n- Ideal for short-term financing, property sales, and falling interest environments.",
+
+    "Membership and Share Certificate": "Become part of Raiffeisen through a cooperative share. Enjoy financial returns and have a voice in decisions.\n\nAdvantages:\n- Attractive interest on shares.\n- Co-determination at general meetings.\n- Preferential banking conditions and free cards first year.\n- Access to MemberPlus leisure benefits.\n\nServices:\n- Membership benefits, annual member events, voting rights.\n- Share certificate returns.\n\nFAQs:\n- How to become a member, MemberPlus access, student benefits.",
+
+    "Fixed-rate Mortgage": "Secure your financing with a consistent interest rate over a fixed term. Ideal for long-term planning and protection against rising rates.\n\nAdvantages:\n- Cost predictability.\n- Option for forward mortgages to lock future rates.\n\nRisks:\n- No early termination possible.\n- Risk of missing falling market rates.\n\nFAQs:\n- Suitable for long-term planners and those expecting interest rate increases.",
+
+    "E-banking Benefits": "Manage your finances easily and securely with Raiffeisen e-banking.\n\nAdvantages:\n- Convenient access anywhere, anytime.\n- High security standards.\n- Full financial overview.\n\nFunctions:\n- Account management, payments, eBill, tax documents, securities trading.\n- Card Self Service, notifications, accessibility features.\n- 24/7 security advice.",
+
+    "Card Self Service": "Manage your Raiffeisen cards conveniently.\n\nFeatures:\n- Overview of all cards.\n- Top-up prepaid cards.\n- Block, unblock, and replace cards.\n- Adjust daily and monthly limits.\n- Set online usage preferences.",
+
+    "Mastercard Credit Card": "Make cashless payments globally with Raiffeisen Mastercard, available in Silver or Gold editions.\n\nAdvantages:\n- Worldwide acceptance and contactless payment options.\n- Integrated insurance protection.\n- Manage cards online or via one app.\n- Bonus point program 'surprize'.\n\nServices:\n- Purchase protection, extended warranty, and travel insurance.\n\nFees:\n- Annual fees vary (Silver CHF 96, Gold CHF 198).\n- Various currency processing fees.\n\nFAQs:\n- Application process, one App services, e-banking integration.",
+
+    "Fund Savings Plan": "Invest systematically with Raiffeisen's Fund Savings Plan for higher potential returns.\n\nAdvantages:\n- Regular investments from CHF 100.\n- Benefit from average price effects.\n- Automated and flexible payment setup.\n\nServices:\n- Wide selection of funds (equity, bond, index-tracking).\n- Flexibility in adjusting payments.\n\nFAQs:\n- Fund basics, suitability for retirement, investment periods recommended."
 };
+
 
 const container = document.getElementById('boxContainer');
 const infoOutput = document.getElementById('infoOutput');
@@ -99,14 +90,66 @@ function renderBoxes() {
         const box = document.createElement('div');
         box.className = 'box';
         box.textContent = subjectName;
-        box.title = subjects[subjectName];
+
+        // Clicking a box highlights it and shows info
+        box.addEventListener('click', () => {
+            highlightBox(subjectName);
+        });
+
         container.appendChild(box);
     }
 
-    // Highlight the newest (first in list)
+    // By default, highlight the newest
+    highlightBox(visibleSubjects[0]);
+}
+
+function highlightBox(subjectName) {
     const boxes = document.querySelectorAll('.box');
-    if (boxes.length > 0) {
-        boxes[0].classList.add('active');
-        infoOutput.textContent = subjects[visibleSubjects[0]];
+    boxes.forEach(box => {
+        box.classList.toggle('active', box.textContent === subjectName);
+    });
+
+    infoOutput.textContent = subjects[subjectName];
+
+    fetchSuggestion(subjectName);
+}
+
+
+async function fetchSuggestion(subjectName) {
+    const suggestionOutput = document.getElementById('suggestionOutput');
+
+    const prompt = `In 2 short sentences, describe an important point about "${subjectName}" in the context of Raiffeisen bank's products. Keep it simple and concise.`;
+
+    suggestionOutput.textContent = "Loading suggestion..."; // loading state
+
+    try {
+        const response = await fetch('https://swisshacks-aoai-westeurope.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-02-15-preview', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'api-key': '2yjmTT6QIzFt2Aln8FkFd49mBUhqtp6GEFAOQX11ANvxGOfjUw4IJQQJ99BDAC5RqLJXJ3w3AAABACOG9ngV' // <- your Azure API key here
+            },
+            body: JSON.stringify({
+                messages: [{ role: 'user', content: prompt }],
+                temperature: 0.7,
+                max_tokens: 100
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.choices && data.choices.length > 0) {
+            const suggestion = data.choices[0].message.content.trim();
+            suggestionOutput.textContent = suggestion;
+        } else if (data.error) {
+            console.error('API Error:', data.error.message);
+            suggestionOutput.textContent = "API Error: " + data.error.message;
+        } else {
+            console.error('Unexpected API response:', data);
+            suggestionOutput.textContent = "Unexpected API response.";
+        }
+    } catch (error) {
+        console.error('Error fetching suggestion:', error);
+        suggestionOutput.textContent = "Failed to load suggestion.";
     }
 }
