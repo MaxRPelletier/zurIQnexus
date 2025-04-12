@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Split Screen Speech to Text + Boxes</title>
+    <title>Split Screen Speech to Text + Dynamic Boxes</title>
     <style>
         html,
         body {
@@ -78,6 +78,22 @@
             color: white;
         }
 
+        .info-output {
+            width: 100%;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .text-output {
             font-size: 24px;
             color: white;
@@ -99,6 +115,7 @@
 
         <div class="right">
             <div class="boxes" id="boxContainer"></div>
+            <div class="info-output" id="infoOutput">Say a subject to see details...</div>
             <div class="text-output" id="output">Speak to see text...</div>
         </div>
     </div>
