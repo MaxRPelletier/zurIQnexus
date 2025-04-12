@@ -14,22 +14,23 @@
             overflow: hidden;
             font-family: Arial, sans-serif;
         }
- 
+
         .container {
             display: flex;
             width: 100%;
             height: 100%;
         }
-        
-        .left, .right {
+
+        .left,
+        .right {
             height: 100%;
             transition: width 0.4s ease;
-            }
+        }
 
         .left {
             width: 50%;
             background-color: #eee;
-            overflow-y: auto; /* <-- Make left scrollable vertically */
+            overflow-y: auto;
         }
 
         .right {
@@ -41,7 +42,7 @@
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
-            overflow-y: auto; /* Right side stays scrollable too */
+            overflow-y: auto;
         }
 
         img {
@@ -50,7 +51,8 @@
             display: block;
         }
 
-        .boxes {
+        .boxes,
+        .subtitles {
             width: 100%;
             display: flex;
             flex-wrap: wrap;
@@ -65,7 +67,7 @@
             padding: 10px 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            font-size: 22px;
+            font-size: 18px;
             text-align: center;
             width: 120px;
             cursor: pointer;
@@ -81,7 +83,31 @@
             color: white;
         }
 
-        .info-output {
+        .sub-box {
+            background: #e0f7e9;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            text-align: center;
+            width: 120px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .sub-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .sub-box.active {
+            background-color: #81c784;
+            color: white;
+        }
+
+        .info-output,
+        .suggestion-output,
+        #subtitleOutput {
             width: 100%;
             padding: 15px;
             background: white;
@@ -92,56 +118,21 @@
             color: #333;
             text-align: left;
             min-height: 60px;
-            display: flex;
-            align-items: left;
-            justify-content: left;
         }
 
-        .suggestion-output {
-            width: 100%;
-            padding: 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            font-size: 22px;
-            color: #666;
+        .suggestion-output,
+        .text-output {
             text-align: center;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: #666;
         }
-
 
         .text-output {
             font-size: 16px;
-            color: white;
-            text-align: center;
-            width: 100%;
-            padding: 20px;
             background-color: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             margin-top: auto;
+            color: white;
         }
-
-        /* Hover Effects */
-        .container:hover .left:hover {
-        width: 60%;
-        }
-
-        .container:hover .right:hover {
-        width: 60%;
-        }
-
-        .container:hover .left:hover ~ .right {
-        width: 40%;
-        }
-
-        .container:hover .right:hover ~ .left {
-        width: 40%;
-        }
-
     </style>
 </head>
 
@@ -153,7 +144,8 @@
 
         <div class="right">
             <div class="boxes" id="boxContainer"></div>
-            <div class="info-output" id="infoOutput">Say a subject to see details...</div>
+            <div class="subtitles" id="subtitleContainer"></div>
+            <div id="subtitleOutput"></div>
             <div class="suggestion-output" id="suggestionOutput">Suggestions will appear here...</div>
             <div class="text-output" id="output">Speak to see text...</div>
         </div>
