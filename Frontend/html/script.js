@@ -26,6 +26,7 @@ async function loadSubjects() {
         // Initialize with first 5 subjects
         visibleSubjects = subjectKeys.slice(0, MAX_VISIBLE);
         renderBoxes();
+        currentSubjectName = null;
         setupSpeechRecognition();
     } catch (error) {
         console.error('Failed to load subjects:', error);
@@ -62,6 +63,18 @@ function setupSpeechRecognition() {
 function processSpeech(transcript) {
     const normTranscript = normalize(transcript);
 
+    // First: check current subject's subtitles
+    if (currentSubjectName) {
+        const subtitles = Object.keys(subjects[currentSubjectName]);
+        for (const subtitle of subtitles) {
+            if (normTranscript.includes(normalize(subtitle)) || normalize(subtitle).includes(normTranscript)) {
+                switchToSubtitle(subtitle);
+                return; // Early return if subtitle matched
+            }
+        }
+    }
+
+    // Then: check subjects
     let matchingSubjects = [];
 
     for (const subject of subjectKeys) {
@@ -77,7 +90,7 @@ function processSpeech(transcript) {
 
     if (matchingSubjects.length > 0) {
         matchingSubjects.sort((a, b) => b.score - a.score);
-
+        
         const bestMatch = matchingSubjects[0].subject;
 
         matchingSubjects.forEach(m => {
@@ -95,17 +108,6 @@ function processSpeech(transcript) {
 
         renderBoxes();
         highlightBox(bestMatch);
-        return;
-    }
-
-    if (currentSubjectName) {
-        const subtitles = Object.keys(subjects[currentSubjectName]);
-        for (const subtitle of subtitles) {
-            if (normTranscript.includes(normalize(subtitle)) || normalize(subtitle).includes(normTranscript)) {
-                switchToSubtitle(subtitle);
-                return;
-            }
-        }
     }
 }
 
@@ -135,8 +137,8 @@ function renderBoxes() {
         container.appendChild(box);
     }
 
-    if (visibleSubjects.length > 0) {
-        highlightBox(visibleSubjects[0]);
+    if (visibleSubjects.length > 0 && currentSubjectName !== null) {
+        highlightBox(currentSubjectName);
     }
 }
 
@@ -153,7 +155,7 @@ function highlightBox(subjectName) {
 
 function renderSubtitles(subjectName) {
     subtitleContainer.innerHTML = '';
-    subtitleOutput.textContent = '';
+    subtitleOutput.textContent = "Please select a subject...";
 
     const subjectContent = subjects[subjectName];
     let firstSubBox = null;
@@ -208,7 +210,7 @@ function formatSubtitleContent(content) {
 async function fetchSuggestion(subjectName) {
     const suggestionOutput = document.getElementById('suggestionOutput');
 
-    const prompt = `In 2 short sentences, describe an important point about "${subjectName}" in the context of Raiffeisen bank's products. Keep it simple and concise.`;
+    const prompt = `In 2 short sentences, describe an important point about "${subjectName}" in the context of Raiffeisen bank's products.`;
 
     suggestionOutput.textContent = "Loading suggestion...";
 
