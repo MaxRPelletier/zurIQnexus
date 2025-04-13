@@ -1,7 +1,3 @@
-Awesome — thank you for the details! Based on that, here’s a clean, professional, and engaging `README.md` draft you could drop into your repo:
-
----
-
 # 🧠 zurIQnexus
 
 Welcome to **zurIQnexus** — an AI-powered banking assistant platform designed to enhance customer service and operational insights for financial institutions. Built around intelligent chatbot interactions, dynamic data visualizations, and AI agent collaboration, zurIQnexus modernizes how banks and their customers connect.
@@ -93,7 +89,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [LinkedIn](https://www.linkedin.com/in/maxrpelletier/)
 [Frederec Im][(https://github.com/in/frederecim)]
 [LinkedIn](https://www.linkedin.com/in/frederecim/)
-
----
-
-Would you like a lighter, friendlier version too? Or maybe one styled more for enterprise/official documentation? I can tailor it if you’d like.
