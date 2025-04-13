@@ -26,8 +26,8 @@ It features a detailed overview of banking assets, dynamic voice-driven navigati
 
 1. **Clone the repository**:
    ```bash
-   git clone <your-repository-url>
-   cd <your-project-directory>
+   git clone git@github.com:MaxRPelletier/zurIQnexus.git 
+   cd zurIQnexus 
    ```
 
 2. **Set up SSL certificates**:
