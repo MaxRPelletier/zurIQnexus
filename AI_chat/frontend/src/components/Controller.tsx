@@ -29,8 +29,8 @@ const Controller = () => {
         const formData = new FormData();
         formData.append("file", blob, "myFile.wav");
 
-        // send form data to api endpoint "https://bkn4.onrender.com/post-audio"
-        await axios.post("http://localhost:8000/post-audio", formData, {
+        // send form data to api endpoint "http://localhost:8000/post-audio"
+        await axios.post("https://ai-chat-bkn4.onrender.com/post-audio", formData, {
             headers: {
               "Content-Type": "audio/mpeg",
             },
@@ -42,8 +42,8 @@ const Controller = () => {
             audio.src = createBlobURL(blob);
 
             // Append to audio
-            const raifMessage = { sender: "raif", blobUrl: audio.src };
-            messagesArr.push(raifMessage);
+            const rachelMessage = { sender: "otto", blobUrl: audio.src };
+            messagesArr.push(rachelMessage);
             setMessages(messagesArr);
 
             // Play audio
@@ -71,14 +71,14 @@ const Controller = () => {
                 key={index + audio.sender}
                 className={
                   "flex flex-col " +
-                  (audio.sender == "raif" && "flex items-end")
+                  (audio.sender == "otto" && "flex items-end")
                 }
               >
                 {/* Sender */}
                 <div className="mt-4">
                   <p
                     className={
-                      audio.sender == "raif"
+                      audio.sender == "otto"
                         ? "text-right mr-2 italic text-green-500"
                         : "ml-2 italic text-blue-500"
                     }
@@ -99,19 +99,19 @@ const Controller = () => {
 
           {messages.length == 0 && !isLoading && (
             <div className="text-center font-light italic mt-10">
-              Let Raif help you ...
+              Okay, dish it out ...
             </div>
           )}
 
           {isLoading && (
             <div className="text-center font-light italic mt-10 animate-pulse">
-              Listening ...
+              Hmmm ...
             </div>
           )}
         </div>
 
         {/* Recorder */}
-        <div className="fixed bottom-0 w-full py-6 border-t text-center bg-gradient-to-r from-orange-500 text-red-500">
+        <div className="fixed bottom-0 w-full py-6 border-t text-center bg-gradient-to-r from-sky-500 text-blue-500">
           <div className="flex justify-center items-center w-full">
             <div>
               <RecordMessage handleStop={handleStop} />

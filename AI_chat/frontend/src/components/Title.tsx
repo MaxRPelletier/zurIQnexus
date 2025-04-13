@@ -8,12 +8,12 @@ type Props = {
 function Title({ setMessages }: Props) {
     const [isResetting, setIsResetting] = useState(false);
 
-    // reset the conversation https://bkn4.onrender.com/reset
+    // reset the conversation "http://127.0.0.1:8000/reset"
     const resetConversation = async () => {
         setIsResetting(true);
 
         await axios
-            .get("http://127.0.0.1:8000/reset", {
+            .get("https://ai-chat-bkn4.onrender.com/reset", {
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -30,7 +30,7 @@ function Title({ setMessages }: Props) {
 
     return (
         <div className='flex justify-between items-center w-full p-4 bg-gray-900 text-white font-bold shadow'>
-            <div className='italic'>Accept to Talk</div>
+            <div className='italic'>Let's Talk</div>
             {/*
             <a href="https://www.forvava.com/" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-down-square" viewBox="0 0 16 16">
@@ -43,7 +43,7 @@ function Title({ setMessages }: Props) {
             <button
                 onClick={resetConversation}
                 className={
-                    "{transition-all duration-300 text-red-300 hover:text-pink-500 " +
+                    "{transition-all duration-300 text-blue-300 hover:text-pink-500 " +
                     (isResetting && "animate-pulse")
                 }
             >
